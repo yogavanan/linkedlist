@@ -107,10 +107,10 @@ A factory method pattern is a creational pattern. It is used to instantiate an o
 
 # References
 
-#### Harvard Lecture
-
-	https://www.youtube.com/watch?v=mym5m-GKG0Q
-
 #### Examples with Code
 
 	https://www.youtube.com/watch?v=j9arNRRoPe8
+
+#### 2 Hours detailed talk
+	
+	https://www.youtube.com/watch?v=ALxQdnOdYXQ
