@@ -103,14 +103,3 @@ A factory method pattern is a creational pattern. It is used to instantiate an o
 ##  What is Observer design pattern in Java ? When do you use Observer pattern in Java ?
 
 ##  Can you write thread-safe Singleton in Java ?
-
-
-# References
-
-#### Harvard Lecture
-
-	https://www.youtube.com/watch?v=mym5m-GKG0Q
-
-#### Examples with Code
-
-	https://www.youtube.com/watch?v=j9arNRRoPe8
