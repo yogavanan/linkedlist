@@ -1,20 +1,19 @@
-Design Paterns:
+## Design Paterns
 
-1. What is Design Pattern ? Explain its advantages ?
+## What is Design Pattern ? Explain its advantages ?
 
 A design pattern systematically names, motivates, and explains a general design that addresses a recurring design problem in object-oriented systems. 
 
 It describes the problem, the solution, when to apply the solution, and its consequences. It also gives implementation hints and examples. The solution is a general arrangement of objects and classes that solve the problem. The solution is customized and implemented to solve the problem in a particular context. 
 
-2.Different Types of Design Patterns ?
+## Different Types of Design Patterns ?
 
 There are three basic classifications of patterns: 
 	1. Creational 
 	2. Structural
 	3. Behavioral patterns.
 
-Creational Patterns
--------------------
+### Creational Patterns
 Abstract Factory: 
 	Creates an instance of several families of classes 
 
@@ -30,8 +29,7 @@ Prototype:
 Singleton: 
 	A class in which only a single instance can exist 
 
-Structural Patterns:
--------------------
+### Structural Patterns:
 
 Adapter: 
 	Match interfaces of different classes
@@ -54,8 +52,7 @@ Flyweight:
 Proxy: 
 	An object representing another object
 
-Behavioral Patterns:
--------------------
+### Behavioral Patterns:
 
 Mediator: 
 	Defines simplified communication between classes
