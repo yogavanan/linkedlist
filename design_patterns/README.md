@@ -107,10 +107,17 @@ A factory method pattern is a creational pattern. It is used to instantiate an o
 
 # References
 
-#### Examples with Code
+#### Online Reading with code examples
+
+  https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns
+  https://sourcemaking.com/design_patterns
+
+#### Online Videos
+
+##### Examples with Code
 
 	https://www.youtube.com/watch?v=j9arNRRoPe8
 
-#### 2 Hours detailed talk
+##### 2 Hours detailed talk
 	
 	https://www.youtube.com/watch?v=ALxQdnOdYXQ
