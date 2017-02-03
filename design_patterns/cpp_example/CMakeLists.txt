@@ -9,6 +9,9 @@ if (Boost_FOUND)
   include_directories(${Boost_INCLUDE_DIR})
 endif ()
 
+set(ABSTRACT_FACTORY_FILES creational/abstract_factory/abstract_factory.cpp)
+add_executable(AbstractFactory ${ABSTRACT_FACTORY_FILES})
+
 set(ADAPTER_FILES adapter/adapter.cpp)
 add_executable(Adapter ${ADAPTER_FILES})
 
