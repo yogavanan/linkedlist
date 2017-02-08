@@ -8,11 +8,18 @@ using namespace std;
 
 class Device {
 
+private:
+	string device_name;
+
 public:
 	virtual void open_device() = 0;
 	virtual void read_device() = 0;
 	virtual void write_device() = 0;
 	virtual void close_device() = 0;
+	void set_device_name(string name)
+	{
+		device_name = name;
+	}
 
 	virtual ~Device()
 	{
@@ -24,19 +31,25 @@ public:
 class Sensor1 : public Device
 {
 public:
+
+	Sensor1()
+	{
+		set_device_name("Sensor 1")
+	}
+
 	virtual void open_device()
 	{
 		cout << "Sensor 1 is opened \n";
 	}
-	void read_device()
+	virtual void read_device()
 	{
 		cout << "Sensor 1 is read \n";
 	}
-	void write_device()
+	virtual void write_device()
 	{
 		cout << "Sensor 1 is written \n";
 	}
-	void close_device()
+	virtual void close_device()
 	{
 		cout << "Sensor 1 is closed \n";
 	}
@@ -51,19 +64,25 @@ class Sensor2 : public Device
 {
 
 public:
-	void open_device()
+	Sensor2()
+	{
+		set_device_name("Sensor 2")
+	}
+
+
+	virtual void open_device()
 	{
 		cout << "Sensor 2 is opened \n";
 	}
-	void read_device()
+	virtual void read_device()
 	{
 		cout << "Sensor 2 is read \n";
 	}
-	void write_device()
+	virtual void write_device()
 	{
 		cout << "Sensor 2 is written \n";
 	}
-	void close_device()
+	virtual void close_device()
 	{
 		cout << "Sensor 2 is closed \n";
 	}
