@@ -102,11 +102,11 @@ public:
 	{
 		if (device_name == "sensor 1")
 		{
-			return new Sensor1;
+			return new Sensor1();
 		}
 		else if (device_name == "sensor 2")
 		{
-			return new Sensor2;
+			return new Sensor2();
 		}
 		return NULL;
 	}
