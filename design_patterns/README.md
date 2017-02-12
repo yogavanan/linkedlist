@@ -16,14 +16,14 @@ There are three basic classifications of patterns:
 ### Creational Patterns
 
 #### Abstract Factory: 
-	Creates an instance of several families of classes 
+	Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
 
 #### Builder
-	Separates object construction from its representation 
+	Separate the construction of a complex object from its representation so that the same construction processes can create different representations.
 
 #### Factory Method
-	Creates an instance of several derived classes 
-
+	Define an interface for creating an object, but let the subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+	
 #### Prototype
 	A fully initialized instance to be copied or cloned 
 
