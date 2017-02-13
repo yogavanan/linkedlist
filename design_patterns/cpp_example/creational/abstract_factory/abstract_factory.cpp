@@ -86,33 +86,97 @@ private:
 // ...
 };
 
+class MazeFactory {
+public:
+	MazeFactory(){};
+	virtual Maze* MakeMaze() const
+	{ return new Maze; }
+	virtual Wall* MakeWall() const
+	{ return new Wall; }
+	virtual Room* MakeRoom(int n) const
+	{ return new Room(n); }
+	virtual Door* MakeDoor(Room* r1, Room* r2) const
+	{ return new Door(r1, r2); }
+};
+
+class Spell
+{
+public:
+	Spell()
+	{
+		cout << "new spell is created\n";
+	};
+};
+
+class EnchantedRoom : public Room {
+public:
+	EnchantedRoom (int roomNo, Spell * roomspell) : Room (roomNo)
+	{
+		cout << "Enchanted room is created \n";
+		_spell =  roomspell;
+	}
+
+private: 
+	Spell * _spell;
+};
+
+class DoorNeedingSpell: public Door{
+
+public:
+	DoorNeedingSpell(Room* r1, Room* r2) : Door(r1, r2)
+	{
+		cout << "Door needing spell is created \n";
+	};
+
+};
+
+class EnchantedMazeFactory : public MazeFactory {
+public:
+	EnchantedMazeFactory()
+	{
+		cout << "Creating Enchanted Maze factory!! \n";
+	};
+	virtual Room* MakeRoom(int n) const
+	{ return new EnchantedRoom(n, CastSpell()); }
+	virtual Door* MakeDoor(Room* r1, Room* r2) const
+	{ return new DoorNeedingSpell(r1, r2); }
+protected:
+	Spell* CastSpell() const
+	{	
+		return new Spell();
+	};
+};
+
+
 class MazeGame
 {
 public:
-	static Maze* CreateMaze ();
+	Maze* CreateMaze (MazeFactory& factory);
 
 };
 
 
-Maze* MazeGame::CreateMaze () 
+Maze* MazeGame::CreateMaze (MazeFactory& factory) 
 {
-	Maze* aMaze = new Maze;
-	Room* r1 = new Room(1);
-	Room* r2 = new Room(2);
+	Maze* aMaze = factory.MakeMaze();
+	Room* r1 = factory.MakeRoom(1);
+	Room* r2 = factory.MakeRoom(2);
 
-	Door* theDoor = new Door(r1, r2);
+	Door* aDoor = factory.MakeDoor(r1, r2);
 	aMaze->AddRoom(r1);
 	aMaze->AddRoom(r2);
+	
+	r1->SetSide(North, factory.MakeWall());
+	r1->SetSide(East, aDoor);
+	r1->SetSide(South, factory.MakeWall());
+	r1->SetSide(West, factory.MakeWall());
+	
 
-	r1->SetSide(North, new Wall);
-	r1->SetSide(East, theDoor);
-	r1->SetSide(South, new Wall);
-	r1->SetSide(West, new Wall);
+	r2->SetSide(North, factory.MakeWall());
+	r2->SetSide(East, factory.MakeWall());
+	r2->SetSide(South, factory.MakeWall());
+	r2->SetSide(West, aDoor);
 
-	r2->SetSide(North, new Wall);
-	r2->SetSide(East, new Wall);
-	r2->SetSide(South, new Wall);
-	r2->SetSide(West, theDoor);
 
 	cout << "Maze Game created !! \n";
 
@@ -123,7 +187,9 @@ Maze* MazeGame::CreateMaze ()
 
 int main()
 {
-	Maze* newMaze = MazeGame::CreateMaze ();
+	MazeGame game;
+	EnchantedMazeFactory enchantedMazeFactory;
+	game.CreateMaze (enchantedMazeFactory);
 
 	return 0;
 }
