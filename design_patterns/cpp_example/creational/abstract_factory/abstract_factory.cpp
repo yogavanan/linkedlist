@@ -11,6 +11,7 @@ enum Direction {North, South, East, West};
 class MapSite {
 public:
 	virtual void Enter() = 0;
+	virtual void ~Enter() = 0;
 };
 
 class Room : public MapSite {
@@ -56,6 +57,7 @@ public:
 	{
 		_room1 = r1;
 		_room2 = r2;
+		_isOpen = false;
 	};
 	virtual void Enter()
 	{
@@ -74,6 +76,7 @@ public:
 	Maze()
 	{
 		cout << "Maze is created !! \n";
+		_roomCount = 0;
 	};
 	void AddRoom(Room* newRoom)
 	{
@@ -89,6 +92,7 @@ private:
 class MazeFactory {
 public:
 	MazeFactory(){};
+	virtual ~MazeFactory(){};
 	virtual Maze* MakeMaze() const
 	{ return new Maze; }
 	virtual Wall* MakeWall() const
