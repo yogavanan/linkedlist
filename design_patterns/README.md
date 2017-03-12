@@ -26,6 +26,12 @@ There are three basic classifications of patterns:
 #### Builder
 	Separate the construction of a complex object from its representation so that the same construction processes can create different representations.
 
+	Builder VS Abstract factory
+		- Builder focuses on contructing Complex object step by step. But abstract factory emphasis is on 
+		families of product objects (Simple or complex)
+		- Builder returns the product as final step, but Abstract factory the product is returned immediately
+
+
 #### Factory Method
 	Define an interface for creating an object, but let the subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 	
@@ -126,3 +132,12 @@ A factory method pattern is a creational pattern. It is used to instantiate an o
 ##### 2 Hours detailed talk
 	
 	https://www.youtube.com/watch?v=ALxQdnOdYXQ
+
+# Working Examples
+	
+Chain of Responsibilites
+	IPCService -> ONVIF IPC Service
+	BaseCGI -> SystemCGI
+
+Abstract Factory:
+	

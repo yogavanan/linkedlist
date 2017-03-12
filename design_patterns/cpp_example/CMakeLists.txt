@@ -9,25 +9,19 @@ if (Boost_FOUND)
   include_directories(${Boost_INCLUDE_DIR})
 endif ()
 
+#creational patterns
+
 set(ABSTRACT_FACTORY_FILES creational/abstract_factory/abstract_factory.cpp)
 add_executable(AbstractFactory ${ABSTRACT_FACTORY_FILES})
 
-set(ADAPTER_FILES adapter/adapter.cpp)
-add_executable(Adapter ${ADAPTER_FILES})
-
-set(COMPOSITE_FILES composite/composite.cpp)
-add_executable(Composite ${COMPOSITE_FILES})
-
-set(SPECIFICATION_FILES specification/specification.cpp)
-add_executable(Specifiction ${SPECIFICATION_FILES})
-
-set(BUILDER_FILES builder/builder.cpp)
+set(BUILDER_FILES creational/builder/builder.cpp)
 add_executable(Builder ${BUILDER_FILES})
 
-set(GROOVY_BUILDER_FILES groovy-builder/groovy-builder.cpp)
-add_executable(GroovyBuilder ${GROOVY_BUILDER_FILES})
+# structural patterns
 
-add_subdirectory(facet-builders)
+set(ADAPTER_FILES structural/adapter/adapter.cpp)
+add_executable(Adapter ${ADAPTER_FILES})
 
-set(MAYBE_MONAD_FILES maybe-monad/maybe-monad.cpp)
-add_executable(MaybeMonad ${MAYBE_MONAD_FILES})
+set(COMPOSITE_FILES structural/composite/composite.cpp)
+add_executable(Composite ${COMPOSITE_FILES})
+
